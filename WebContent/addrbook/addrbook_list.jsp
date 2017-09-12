@@ -24,8 +24,8 @@
 			<a href="addrbook_form.jsp">주소록 등록</a>
 			
 			<table border=2>
-				<tr><th>번호</th><th>name</th><th>tel</th><th>birth</th>
-				<th>company</th><th>memo</th>
+				<tr><th>번호</th><th>name</th><th>email</th><th>학과</th>
+				<th>전화번호</th><th>생일</th><th>메모</th>
 				</tr>
 				<%
 					datas=list.getDBList();

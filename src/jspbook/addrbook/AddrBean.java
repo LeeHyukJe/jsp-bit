@@ -141,20 +141,21 @@ public class AddrBean {
 	}
 	
 	public ArrayList<AddrBook> getDBList(){
-		connect();
-		ArrayList<AddrBook>datas=new ArrayList<AddrBook>();
+		connect(); //db와 연결
+		ArrayList<AddrBook>datas=new ArrayList<>(); //addrbook객체를 담을 배열 생성
 		String sql="select * from addrbook";
+		
 		try {
-			pstmt=conn.prepareStatement(sql);
-			ResultSet rs=pstmt.executeQuery();
-			AddrBook addrbook=new AddrBook();
+			pstmt=conn.prepareStatement(sql); //
+			ResultSet rs=pstmt.executeQuery(); //쿼리문 실행
 			while(rs.next()) {
-				addrbook.setAb_id(rs.getInt(1));
-				addrbook.setAb_name(rs.getString(2));
-				addrbook.setAb_email(rs.getString(3));
-				addrbook.setAb_birth(rs.getString(4));
-				addrbook.setAb_tel(rs.getString(5));
-				addrbook.setAb_comdept(rs.getString(5));
+				AddrBook addrbook=new AddrBook();
+				addrbook.setAb_id(rs.getInt(1)); //첫번째 행을 객체에 담음
+				addrbook.setAb_name(rs.getString(2)); //두번째행을 객체에 담음
+				addrbook.setAb_email(rs.getString(3)); //세번째 행을 객체에 담음
+				addrbook.setAb_birth(rs.getString(4)); //네번째 행을 객체에 담음
+				addrbook.setAb_tel(rs.getString(5)); //다섯번째 행을 객체에 담음
+				addrbook.setAb_comdept(rs.getString(5)); //여섯번째 행을 객체에 담음
 				addrbook.setAb_memo(rs.getString(6));
 				datas.add(addrbook);
 			}
