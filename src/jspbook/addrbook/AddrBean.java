@@ -49,15 +49,15 @@ public class AddrBean {
 	public boolean updateDB(AddrBook addrbook) {
 		connect();
 		
-		String sql="update addrbook set ab_name=?,ab_email=?, ab_birth=?,ab_tel=?,ab_comdept=?, ab_memo=? where ab_id=?";
+		String sql="update addrbook set ab_name=?,ab_email=?, ab_comdept=?,ab_birth=?,ab_tel=?, ab_memo=? where ab_id=?";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, addrbook.getAb_name());
 			pstmt.setString(2, addrbook.getAb_email());
+			pstmt.setString(3, addrbook.getAb_comdept());
 			pstmt.setString(3, addrbook.getAb_birth());
-			pstmt.setString(4, addrbook.getAb_tel());
-			pstmt.setString(5, addrbook.getAb_comdept());
+			pstmt.setString(5, addrbook.getAb_tel());
 			pstmt.setString(6, addrbook.getAb_memo());
 			pstmt.setInt(7, addrbook.getAb_id());
 		}catch(SQLException e) {
@@ -90,15 +90,15 @@ public class AddrBean {
 	public boolean insertDB(AddrBook addrbook) {
 		connect();
 		
-		String sql="insert into addrbook(ab_name,ab_email,ab_birth,ab_tel,ab_comdept,ab_memo) values(?,?,?,?,?,?)";
+		String sql="insert into addrbook(ab_name,ab_email,ab_comdept,ab_birth,ab_tel,ab_memo) values(?,?,?,?,?,?)";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, addrbook.getAb_name());
 			pstmt.setString(2, addrbook.getAb_email());
-			pstmt.setString(3, addrbook.getAb_birth());
-			pstmt.setString(4, addrbook.getAb_tel());
-			pstmt.setString(5, addrbook.getAb_comdept());
+			pstmt.setString(3, addrbook.getAb_comdept());
+			pstmt.setString(4, addrbook.getAb_birth());
+			pstmt.setString(5, addrbook.getAb_tel());
 			pstmt.setString(6, addrbook.getAb_memo());
 			pstmt.executeUpdate();
 		}catch(SQLException e) {
@@ -143,7 +143,7 @@ public class AddrBean {
 	public ArrayList<AddrBook> getDBList(){
 		connect();
 		ArrayList<AddrBook>datas=new ArrayList<AddrBook>();
-		String sql="select * from addrbook order by ad_id desc";
+		String sql="select * from addrbook";
 		try {
 			pstmt=conn.prepareStatement(sql);
 			ResultSet rs=pstmt.executeQuery();

@@ -10,7 +10,7 @@
 <%
 	String action = request.getParameter("action");
 	if (action.equals("list")) {
-
+		response.sendRedirect("addrbook_list.jsp");
 	} 
 	else if (action.equals("insert")) {
 		if(addrbean.insertDB(addrbook)){
@@ -26,7 +26,7 @@
 
 	}
 	else if(action.equals("delete")){
-		
+		//test git hub test
 	}
 	else{
 		
