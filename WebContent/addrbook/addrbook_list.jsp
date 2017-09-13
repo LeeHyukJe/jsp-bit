@@ -17,6 +17,9 @@
 	</script>
 </head>
 <body>
+<div>
+	 <a href="index.jsp" style="display:inline-block;"><img src="homeIcon.png" height="48" width="48"/></a>
+</div>
 	<div align="center">
 		<h2>주소록:목록화면</h2>
 		<hr>
@@ -44,7 +47,7 @@
 					}
 					%>
 			</table>
-			<a style="align-content: center" href="addrbook_form.jsp">주소록 등록</a>
+			<a style="float:right;" href="addrbook_form.jsp">주소록 등록</a>
 		</form>
 	</div>
 </body>

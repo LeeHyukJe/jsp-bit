@@ -126,14 +126,14 @@ public class AddrBean {
 	public AddrBook getDB(int gb_id) {
 		connect();
 		
-		String sql="select *from addrbook where ad_id=?";
+		String sql="select *from addrbook where ab_id=?";
 		AddrBook addrbook=new AddrBook();
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, gb_id);
 			ResultSet rs=pstmt.executeQuery();
-			while(rs.next()) {
+			rs.next();
 				addrbook.setAb_id(rs.getInt(1));
 				addrbook.setAb_name(rs.getString(2));
 				addrbook.setAb_email(rs.getString(3));
@@ -141,7 +141,7 @@ public class AddrBean {
 				addrbook.setAb_tel(rs.getString(5));
 				addrbook.setAb_comdept(rs.getString(5));
 				addrbook.setAb_memo(rs.getString(6));
-			}
+			
 			rs.close();
 		}catch(SQLException e) {
 			System.out.println(e);
