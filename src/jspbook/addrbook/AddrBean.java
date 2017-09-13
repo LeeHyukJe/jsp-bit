@@ -164,10 +164,10 @@ public class AddrBean {
 				addrbook.setAb_id(rs.getInt(1)); //첫번째 행을 객체에 담음
 				addrbook.setAb_name(rs.getString(2)); //두번째행을 객체에 담음
 				addrbook.setAb_email(rs.getString(3)); //세번째 행을 객체에 담음
-				addrbook.setAb_birth(rs.getString(4)); //네번째 행을 객체에 담음
-				addrbook.setAb_tel(rs.getString(5)); //다섯번째 행을 객체에 담음
-				addrbook.setAb_comdept(rs.getString(5)); //여섯번째 행을 객체에 담음
-				addrbook.setAb_memo(rs.getString(6));
+				addrbook.setAb_comdept(rs.getString(4)); //여섯번째 행을 객체에 담음
+				addrbook.setAb_birth(rs.getString(5)); //네번째 행을 객체에 담음
+				addrbook.setAb_tel(rs.getString(6)); //다섯번째 행을 객체에 담음
+				addrbook.setAb_memo(rs.getString(7));
 				datas.add(addrbook);
 			}
 			rs.close();

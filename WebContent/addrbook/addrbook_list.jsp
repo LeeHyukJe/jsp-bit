@@ -11,7 +11,7 @@
 <title>주소록 목록 화면</title>
 	<script>
 		function check(ab_id){
-			pwd=promt('수정/삭제 하려면 비밀번호를 넣으세요');
+			pwd=prompt('수정/삭제 하려면 비밀번호를 넣으세요');
 			document.location.href="addrbook_control.jsp?action=edit&ab_id="+ab_id+"&upasswd="+pwd;
 		}
 	</script>
@@ -21,9 +21,9 @@
 		<h2>주소록:목록화면</h2>
 		<hr>
 		<form>
-			<a href="addrbook_form.jsp">주소록 등록</a>
 			
-			<table border=2>
+			
+			<table class="type09">
 				<tr><th>번호</th><th>name</th><th>email</th><th>학과</th>
 				<th>전화번호</th><th>생일</th><th>메모</th>
 				</tr>
@@ -44,6 +44,7 @@
 					}
 					%>
 			</table>
+			<a style="align-content: center" href="addrbook_form.jsp">주소록 등록</a>
 		</form>
 	</div>
 </body>

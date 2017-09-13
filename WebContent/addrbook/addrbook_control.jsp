@@ -21,6 +21,10 @@
 		}
 
 	} else if (action.equals("edit")) {
+		AddrBook abook=addrbean.getDB(addrbook.getAb_id());
+		if(request.getParameter("upasswd").equals("1234")){
+			out.print("<script>alert('비밀번호가 틀렸습니다.'); history.go(-1);</script>");
+		}
 
 	} else if (action.equals("update")) {
 
