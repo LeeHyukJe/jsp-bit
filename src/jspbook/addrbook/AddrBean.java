@@ -14,10 +14,21 @@ public class AddrBean {
 	Connection conn;
 	PreparedStatement pstmt;
 	
-	String jdbc_driver="oracle.jdbc.driver.OracleDriver";
-	String jdbc_url="jdbc:oracle:thin:@localhost:1521:xe";
+	String jdbc_driver;
+	String jdbc_url;
 	
 	void connect() {
+		
+		
+		if(System.getProperty("user.name").equals("lims2733")) {
+			jdbc_driver="com.mysql.jdbc_Driver";
+			jdbc_url="jdbc:mysql://127.0.0.1:3306/db";
+		}
+		else {
+			jdbc_driver="oracle.jdbc.driver.OracleDriver";
+			jdbc_url="jdbc:oracle:thin:@localhost:1521:xe";
+		}
+		
 		try {
 			Class.forName(jdbc_driver);
 			conn=DriverManager.getConnection(jdbc_url,"student","1234");
