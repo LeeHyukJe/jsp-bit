@@ -40,7 +40,7 @@
 	else if(action.equals("delete")){
 		if(addrbean.deleteDB(addrbook.getAb_id())){
 			out.print("<script>alert('삭제되었습니다.')</script>");
-			pageContext.forward("addrbook_control.jsp");
+			pageContext.forward("addrbook_control.jsp?action=list");
 		}
 		else{
 			throw new Exception("DB갱신 오류");

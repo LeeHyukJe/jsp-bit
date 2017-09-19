@@ -14,7 +14,7 @@ div.winner {
 	left: 600px;
 	font-size: 20pt;
 	color: orangered;
-	font-family: 나눔바른고딕;
+	font-family: �굹�닎諛붾Ⅸ怨좊뵓;
 }
 
 ul {
@@ -45,6 +45,7 @@ li a:hover {
 	background-color: #111;
 }
 
+
 div.gradient1 {
 	position: fixed;
 	bottom: 0;
@@ -54,4 +55,25 @@ div.gradient1 {
 	background: linear-gradient(to top, gray, white);
 	text-align: center;
 	vertical-align: middle;
+}
+
+.main_container{
+	position:relative;
+	display:inline-block;
+	width:100%;
+	height:auto;
+	top:10px;
+}
+
+.main_container .picture{
+	postion:absolute;
+	width:500px;
+	height:auto;
+	float:left;
+	border:2px solid black;
+}
+
+.main_container .picture img {
+	width:100%;
+	height:auto;
 }

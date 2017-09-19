@@ -3,11 +3,19 @@
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
 		<item value="C:\Users\bitcamp\Desktop\github\jsp-bit"/>
 	</list>
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="378" key="DIALOG_HEIGHT"/>
+		<item value="710" key="DIALOG_X_ORIGIN"/>
+		<item value="268" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\bitcamp\Desktop\jsp"/>
 			<item value="C:\Users\bitcamp\Desktop\github\jsp-bit"/>
 			<item value="C:\Users\bitcamp\Desktop\github\jsp2"/>
 		</list>
