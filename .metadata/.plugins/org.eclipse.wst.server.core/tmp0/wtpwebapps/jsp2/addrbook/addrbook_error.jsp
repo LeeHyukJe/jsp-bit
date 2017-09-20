@@ -11,12 +11,12 @@
 		<h2>주수록 에러</h2>
 		<hr>
 		<table cellpadding=5 width=400>
-			<tr width=100% bgcolor="pink"><td>
+			<tr style="bgcolor:pink";><td>
 			주수록 처리중 에러가 발생 했습니다.<br>
 			관리자에게 문의해주시기 바랍니다.
 			죄송합니다....
 			<hr>
-			에러내용:<%=new Exception("DB입력 오류") %>
+			에러내용:<%=new Exception() %>
 			<hr>
 			</td>
 			</tr>

@@ -35,7 +35,7 @@
 					for(AddrBook ab:(ArrayList<AddrBook>)datas){
 				%>
 				<tr>
-					<td><a href="javascript:check(<%=ab.getAb_id()%>)"><%=ab.getAb_id() %></a></td>
+					<!--  <td><a href="javascript:check(<%=ab.getAb_id()%>)"><%=ab.getAb_id() %></a></td>-->
 					<td><%=ab.getAb_name() %></td>
 					<td><%=ab.getAb_email() %></td>
 					<td><%=ab.getAb_comdept() %></td>

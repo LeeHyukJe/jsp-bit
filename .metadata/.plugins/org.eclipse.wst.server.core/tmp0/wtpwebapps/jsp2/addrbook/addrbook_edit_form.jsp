@@ -53,6 +53,10 @@
 					value="<%=ab.getAb_memo()%>"></td>
 			</tr>
 			<tr>
+				<th>프로필 사진 업로드</th>
+				<td><input type="file" name="ab_picture" placeholder="자신만의 사진을 올려보세요!"></td>
+			</tr>
+			<tr>
 				<td colspan="2" align="center"><input type="submit" value="저장">
 				<input type="reset" value="취소" onclick="goback()">
 				 <input	type="button" value="삭제" onclick="delcheck()"></td>

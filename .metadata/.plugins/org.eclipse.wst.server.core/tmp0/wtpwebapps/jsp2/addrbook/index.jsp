@@ -13,6 +13,10 @@
 	for (int i = 0; it.hasNext(); i++) {
 		pic_list[i] = it.next().getAb_picture();
 	}
+	String memberId = (String) session.getAttribute("memberid");
+	
+	AddrBook user_pic=addrbean.getDB(memberId);
+	String user_pic2=user_pic.getAb_picture();
 %>
 
 
@@ -32,46 +36,59 @@
 
 
 	<ul>
-		<li class="home"><a href="index.jsp"><img
-				src="homeIcon.png" height="48" width="48" /></a></li>
+		<li class="home"><a href="index.jsp"><img src="homeIcon.png"
+				height="48" width="48" /></a></li>
+		<%
+			if (memberId != null) {
+		%>
+		<li><a href="logout.jsp">로그아웃</a></li>
+		<%
+			} else {
+		%>
+		<li><a href="login_form.html">로그인</a></li>
+		<%
+			}
+		%>
 		<li><a href="addrbook_control.jsp?action=list">회원리스트</a></li>
 		<li><a href="addrbook_form.jsp">회원가입</a></li>
-		<li><a href="login_form.html">로그인</a></li>
+
 	</ul>
 	<hr>
 	<div class="gate">
 		<div class="winner">The Winner Takes It All</div>
 	</div>
 	<div>
-		<form action="fileTest.jsp" method="post"
-			enctype="multipart/form-data">
-			file : <input type="file" name="ab_picture"> <input
-				type="submit" value="전송">
-		</form>
+
 		<div class="main_container">
-			<%
-				try{
-				if(pic_list[3]!=null || pic_list[4]!=null || pic_list[5]!=null || pic_list[6]!=null){
-					
-			%>
 			<div class="picture">
-				<img src="<%=pic_list[3] %>" alt="" />
+				<%
+					try {
+						
+						if (list != null) {
+							if (memberId!=null) {
+							out.print("다른 사용자님들의 프로필 사진입니다.");
+								for (int i = 0; i < pic_list[i].length(); i++) {
+				%>
+				<img src="<%=pic_list[i]%>">
+
+				<%
+								}
+							}
+						}
+					} catch (Exception e) {
+						System.out.print(e);
+					}
+				%>
+				<%
+					if(user_pic.getAb_picture()!=null){
+						out.print(user_pic.getAb_name()+"님이 올리신 프로필 사진입니다.");
+				%>
+				
+				<img src="<%=user_pic.getAb_picture() %>">
+				<%
+					}
+				%>
 			</div>
-			<div class="picture">
-				<img src="<%=pic_list[4] %>" alt="" />
-			</div>
-			<div class="picture">
-				<img src="<%=pic_list[5] %>" alt="" />
-			</div>
-			<div class="picture">
-				<img src="<%=pic_list[6] %>" alt="" />
-			</div>
-			<%
-				}
-				}catch(Exception e){
-					System.out.print(e);
-				}
-			%>
 		</div>
 	</div>
 	<!-- <div class="gradient1">Copyright(c)2017 이혁제 All rights reserved.
