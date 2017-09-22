@@ -2,23 +2,36 @@
 	pageEncoding="UTF-8"%>
 <%@page import="jspbook.addrbook.*"%>
 <%@page import="java.util.*"%>
+<%@page import="java.net.URLEncoder"%>
 <jsp:useBean id="addrbean" scope="page"
 	class="jspbook.addrbook.AddrBean" />
 <jsp:useBean id="addrbook" scope="page"
 	class="jspbook.addrbook.AddrBook" />
 <jsp:setProperty name="addrbook" property="*" />
 <%
-	try{
-    	ArrayList<AddrBook> id_list=addrbean.getDBList();
-    	Iterator<AddrBook> it=id_list.iterator();
-    	String id=request.getParameter("ab_id");
-    	String password=request.getParameter("ab_pasword");
-    	while(it.hasNext()){
-    		if((it.next().getAb_id()).equals(request.getParameter("ab_id")))
-    			session.setAttribute("memberid", id);
-    			response.sendRedirect("index.jsp");
-    	}
-	}catch(Exception e){
+	try {
+		ArrayList<AddrBook> id_list = addrbean.getDBList();
+		Iterator<AddrBook> it = id_list.iterator();
+		String id = request.getParameter("ab_id");
+		String password = request.getParameter("ab_pasword");
+		String is_store = request.getParameter("is_store");
+		while (it.hasNext()) {
+			if ((it.next().getAb_id()).equals(id)) {
+				session.setAttribute("memberid", id);
+				session.setMaxInactiveInterval(60 * 60);
+
+				//쿠기 설정
+				if (is_store.equals("Remember ME!!!!")) {
+					Cookie cookie = new Cookie("id", URLEncoder.encode("memberid", "utf-8"));
+					cookie.setMaxAge(60);
+					response.addCookie(cookie);
+				}
+				response.sendRedirect("index2.jsp");
+				break;
+			}
+		}
+
+	} catch (Exception e) {
 		System.out.print(e);
 	}
 %>

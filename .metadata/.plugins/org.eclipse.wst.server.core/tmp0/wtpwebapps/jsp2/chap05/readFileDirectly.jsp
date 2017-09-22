@@ -9,20 +9,8 @@
 </head>
 <body>
 	<%
-		char[] buff=new char[28];
-		int len=-1;
-		
-		String filePath="C:/Tomcat/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/chap05/message/notice.txt";
-		
-		try(InputStreamReader fr=new InputStreamReader(
-				new FileInputStream(filePath),"UTF-8")){
-			while((len=fr.read(buff))!=-1){
-				out.print(new String(buff,0,len));
-			}
-			
-		}catch(IOException e){
-			out.print("exception 발생!");
-		}
+		String refer=request.getHeader("referer");
+		out.print(refer);
 	%>
 </body>
 </html>

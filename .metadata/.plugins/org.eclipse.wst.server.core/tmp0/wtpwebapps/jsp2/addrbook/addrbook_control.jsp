@@ -14,6 +14,7 @@
 <jsp:setProperty name="addrbook" property="*" />
 
 <%
+	
 	String action = request.getParameter("action");
 	if (action.equals("list")) {
 		response.sendRedirect("addrbook_list.jsp");
@@ -49,35 +50,8 @@
 
 	}
 %>
+<jsp:include page="fileTest.jsp"/>
 
-<%
-	try {
-		request.setCharacterEncoding("UTF-8");
-		String savePath = application.getRealPath("/upload/");
-		String saveDir = "C:/Tomcat/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/ROOT/test/upload";
-		int maxSize = 1024 * 1024 * 100;
-		String enctype = "UTF-8";
-
-		MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, enctype,
-				new DefaultFileRenamePolicy());
-
-		out.println("파일 업로드명" + multi.getFilesystemName("ab_picture") + "<br>");
-		out.println("원래 파일명" + multi.getOriginalFileName("ab_picture") + "<br>");
-		File file = multi.getFile("ab_picture");
-		//String db_pic = multi.getOriginalFileName("ab_picture");
-
-		addrbook.setAb_picture(file.getPath());
-		addrbean.insertDB(addrbook);
-
-		//System.out.print(application.getRealPath(addrbook.getAb_picture()));
-		//File file=multi.getFile("ab_picture");
-
-		//application.setAttribute("path", file.getPath());
-
-	} catch (Exception e) {
-		System.out.print(e);
-	}
-%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
