@@ -36,7 +36,7 @@
 		}
 	%>
 	<div>
-		<a href="index.jsp" style="display: inline-block;"><img
+		<a href="index2.jsp" style="display: inline-block;"><img
 			src="homeIcon.png" height="48" width="48" /></a>
 	</div>
 	<div align="center">

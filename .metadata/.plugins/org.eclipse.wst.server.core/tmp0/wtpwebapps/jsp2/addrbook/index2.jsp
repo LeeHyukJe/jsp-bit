@@ -47,7 +47,7 @@
         <%
         	if(memberId==null){
         %>
-        <a href="login_form.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">로그인</a>
+        <a href="login_form.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">로그인</a>
         <%
         	}else{
         %>
